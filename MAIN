@@ -20,33 +20,7 @@ local
 		    withCheckMapEasy:false
 		    withCheckMapComplete:false
 		   )
-Realverse=translate(dx:50.0 dy:50.0 1:scale(dx:10.0 dy:10.0 1:primitive(kind:building)|primitive(road)|nil)|nil)|scale(dx:10.0 dy:10.0 1:rotate(angle:30.0 1:primitive(kind:water)|nil)|nil)|nil
-   Pokeverse=translate(dx:30.0 dy:60.0 1:primitive(kind:pokemon)|nil)|translate(dx:40.0 dy:90.0 1:primitive(kind:arena)|nil)|nil
 in
    Map = map(ru:Realverse pu:Pokeverse) %% TODO change the map here
-   fun{MyFunction Map} A B C D E in
-      % Ici, on va juste renvoyer les bons trucs
-	  
-	   A=fun {$ Time}
-	  	  realitem(kind:building p1:pt(x:50.0 y:50.0) p2:pt(x:50.0 y:60.0) p3:pt(x:60.0 y:60.0) p4:pt(x:60.0 y:50.0))
-	   end
-	   B=fun {$ Time}
-	  	  realitem(kind:road p1:pt(x:50.0 y:50.0) p2:pt(x:60.0 y:50.0))
-	   end
-	   C=fun {$ Time}
-			realitem(kind:water p1:pt(x:0.0 y:0.0) p2:pt(x:5.0 y:8.66025) p3:pt(x:3.53553 y:13.66025) p4:pt(x:8.66025 y:5.0))
-		 end
-	   D=fun {$ Time}
-	  	  pokeitem(kind:pokemon position:pt(x:30.0 y:60.0))
-	   end
-	   E=fun {$ Time}
-	  	  pokeitem(kind:arena position:pt(x:40.0 y:90.0))
-	   end
-	  [A B C D E]
-   end
-   fun{CheckMap Map}
-      false %% TODO complete here the function for the checking of the maps
-   end
-   
-   {Projet.run MyFunction Map MaxTime Extensions CheckMap}
+   fun{MyFunction Map} 
 end
